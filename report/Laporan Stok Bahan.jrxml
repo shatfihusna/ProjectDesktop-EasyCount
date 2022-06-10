@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Laporan Stok Bahan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0b63b3a-3566-44ba-a059-4bd4dc9e1b66">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     bahan.`id_bahan` AS bahan_id_bahan,
+     bahan.`nama_bahan` AS bahan_nama_bahan,
+     bahan.`jumlah_bahan` AS bahan_jumlah_bahan,
+     bahan.`satuan_bahan` AS bahan_satuan_bahan,
+     bahan.`harga_bahan` AS bahan_harga_bahan,
+     bahan.`tanggal_masuk` AS bahan_tanggal_masuk
+FROM
+     `bahan` bahan]]>
+	</queryString>
+	<field name="bahan_id_bahan" class="java.lang.Integer"/>
+	<field name="bahan_nama_bahan" class="java.lang.String"/>
+	<field name="bahan_jumlah_bahan" class="java.lang.Integer"/>
+	<field name="bahan_satuan_bahan" class="java.lang.String"/>
+	<field name="bahan_harga_bahan" class="java.lang.Integer"/>
+	<field name="bahan_tanggal_masuk" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0dee5723-636f-47fa-9499-e0fb63f484f0" x="167" y="2" width="247" height="48"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN STOK BAHAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="59eb2baa-b69b-4120-b2ab-4a3e5a7b061c" x="0" y="0" width="77" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Bahan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4ac1343a-ed64-44f7-a039-9a0cfd44acff" x="77" y="0" width="123" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Bahan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ffb333b-2176-4b39-8762-5343f1a94602" x="200" y="0" width="77" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Bahan ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="78c3266b-6037-49cc-a08c-148707e322ba" x="277" y="0" width="74" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Satuan Bahan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="78c3266b-6037-49cc-a08c-148707e322ba" x="351" y="0" width="104" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Bahan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1591a899-1034-4cca-ab2b-5add2323c56e" x="455" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="Coolvetica Condensed Rg" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="eee38d9e-cadb-4ea2-8fb4-2110e293aa29" x="0" y="0" width="77" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_id_bahan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f3eb0d0-0f70-460c-ad47-80f973b72ddb" x="77" y="0" width="123" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_nama_bahan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eac715c9-8443-46c3-a277-d3dbc39f73e0" x="200" y="0" width="77" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_jumlah_bahan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4bffacb0-510d-42ec-a576-9250882d312b" x="277" y="0" width="74" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_satuan_bahan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e79bd828-48ce-408a-a9bc-f3afa843da66" x="351" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_harga_bahan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="614732f1-9071-4248-bcca-4290d29d5565" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_tanggal_masuk}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

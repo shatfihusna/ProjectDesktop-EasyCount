@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="transaksi" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6066465-0821-481c-9e52-e4f369021882">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     transaksi.`id_transaksi` AS transaksi_id_transaksi,
+     transaksi.`id_pemesanan` AS transaksi_id_pemesanan,
+     transaksi.`totalbelanja` AS transaksi_totalbelanja,
+     transaksi.`uangbayar` AS transaksi_uangbayar,
+     transaksi.`uangkembali` AS transaksi_uangkembali
+FROM
+     `transaksi` transaksi]]>
+	</queryString>
+	<field name="transaksi_id_transaksi" class="java.lang.Integer"/>
+	<field name="transaksi_id_pemesanan" class="java.lang.Integer"/>
+	<field name="transaksi_totalbelanja" class="java.lang.Integer"/>
+	<field name="transaksi_uangbayar" class="java.lang.Integer"/>
+	<field name="transaksi_uangkembali" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a4d30283-e1e1-483a-b16b-37a5257cb83b" x="143" y="21" width="457" height="34"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN TRANSAKSI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="18" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="37900140-7ca9-4a06-9b1c-8d531c17d4a3" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Id Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd8cb16f-1f38-4ae7-a137-8993dd0ef862" x="100" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Id Pemesanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1c43059-5a9d-4c3b-81d0-7dcdc9a45dfe" x="200" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Total Belanja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1098939-4076-443d-be47-fe0afbb5e405" x="300" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Uang Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a9eba29-7843-48df-84e9-30d83af6beae" x="400" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Uang Kembali]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b61dfaa7-e7f4-4e85-9fb9-913ded936caa" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transaksi_id_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="feff46e1-a0c8-461e-8198-ad04b75fd68f" x="100" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transaksi_id_pemesanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d5a08118-641b-48c4-b742-287afdb7e09b" x="200" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transaksi_totalbelanja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2dedf943-93ee-482c-95e0-69352cb37890" x="300" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transaksi_uangbayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64863b0b-a888-4bd4-8bb4-5dedb04ccb9b" x="400" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transaksi_uangkembali}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
